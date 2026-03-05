@@ -1,0 +1,221 @@
+.service-box-p {
+    display: none;
+}
+
+.service-box:hover > div.service-box-2 > .service-box-p {
+    display: block;
+}
+
+.my-portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.portfolio-item {
+    border: 1px solid #eee;
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    background: #fff;
+    border-radius: 8px;
+}
+
+.portfolio-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.portfolio-item-image { margin-bottom: 10px; }
+
+.portfolio-img { width: 100%; height: auto; border-radius: 6px; }
+
+.portfolio-item-title { font-size: 18px; margin: 10px 0 5px; }
+
+.portfolio-title-link { color: #333; text-decoration: none; transition: color 0.3s; }
+
+.portfolio-title-link:hover { color: #FDB813; }
+
+.portfolio-item-excerpt { font-size: 14px; color: #666; line-height: 1.4; }
+
+
+.portfolio-no-items { text-align: center; color: #999; font-style: italic; }
+
+/* Make link relative */
+.ast-builder-menu-1 .menu-item > .menu-link {
+    position: relative;
+	font-size:22px;
+	font-weight:800;
+}
+.ast-builder-menu-1 .menu-item > .menu-link:hover{
+	color:#FDB813!important;
+}
+
+/* Hidden underline */
+.ast-builder-menu-1 .menu-item > .menu-link::after {
+    content: "";
+    position: absolute;
+    left: 1em;      /* match Astra left padding */
+    right: 1em;     /* match Astra right padding */
+    bottom: 0;
+    height: 2px;
+    background-color: #FDB813;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+/* Hover effect */
+.ast-builder-menu-1 .menu-item > .menu-link:hover::after {
+    transform: scaleX(1);
+}
+a:focus {
+    outline: none;
+}
+
+/* Container */
+.cf7-form {
+    max-width: 800px;
+    margin: 0px auto;
+    padding: 0 10px;
+    font-family: Arial, sans-serif;
+}
+
+/* Each field as flex container */
+.cf7-field {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+/* Labels inline with inputs */
+.cf7-field label {
+    flex: 0 0 150px; /* Fixed label width */
+    font-weight: 600;
+    margin-right: 15px;
+    color: var(--ast-global-color-3); /* dark text */
+}
+
+/* Inputs, textarea, select */
+.cf7-field input[type="text"],
+.cf7-field input[type="email"],
+.cf7-field select,
+.cf7-field textarea {
+    flex: 1; /* take remaining space */
+    padding: 10px 14px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+/* Focus animation using root color */
+.cf7-field input:focus,
+.cf7-field textarea:focus,
+.cf7-field select:focus {
+    border-color: #FDB813!important;
+    box-shadow: 0 0 0 2px rgba(253, 184, 19, 0.2);
+}
+
+/* Textarea height */
+.cf7-field textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+/* Submit button styling */
+.cf7-field input[type="submit"] {
+    margin-left: 0px; /* aligns with input start */
+    background-color: #FDB813;
+    color: #fff;
+    border: none;
+    padding: 20px 40px;
+    border-radius: 50px;
+    font-size: 20px;
+    font-weight: 900;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Button hover */
+.cf7-field input[type="submit"]:hover {
+    background-color: #FB8500; /* your root color 1 */
+    transform: translateY(-2px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .cf7-field {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .cf7-field label {
+        flex: 0 0 auto;
+        margin-bottom: 6px;
+    }
+    .cf7-field input[type="submit"] {
+        margin-left: 0;
+    }
+}
+
+/* Custom H2 Hover Underline Effect */
+.custom-underline {
+    position: relative;
+    display: inline-block; /* Underline fits text width */
+    color: #808285; /* Your heading color */
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+/* Hidden underline */
+.custom-underline::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 3px; /* Thickness of underline */
+    background-color: #FDB813; /* Underline color */
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+/* Hover effect */
+.custom-underline:hover {
+    color: #FDB813; /* Optional: text color change */
+}
+
+.custom-underline:hover::after {
+    transform: scaleX(1);
+}
+
+
+.image-corner-box{
+    position: relative;
+    display: inline-block;
+}
+
+.image-corner-box::before{
+    content:"";
+    position:absolute;
+    top:-8px;
+    left:-8px;
+    width:20px;
+    height:20px;
+    border-top:4px solid var(--ast-global-color-0);
+    border-left:4px solid var(--ast-global-color-0);
+}
+.image-corner-box::after{
+    content:"";
+    position:absolute;
+    bottom:-8px;
+    right:-8px;
+    width:20px;
+    height:20px;
+    border-bottom:4px solid var(--ast-global-color-0);
+    border-right:4px solid var(--ast-global-color-0);
+}
