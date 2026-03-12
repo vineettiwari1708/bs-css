@@ -1,0 +1,172 @@
+Form
+<!-- Contact Form 7 -->
+<div class="cf7-form">
+    <div class="cf7-field">
+        <label for="your-name">Your Name</label>
+        [text* your-name id:your-name placeholder "Enter your name"]
+    </div>
+
+    <div class="cf7-field">
+        <label for="your-email">Your Email</label>
+        [email* your-email id:your-email placeholder "Enter your email"]
+    </div>
+
+  <div class="cf7-field">
+    <label for="your-subject">Subject</label>
+    [select* your-subject id:your-subject include_blank "2D Architectural Planning" "3D Elevation Design" "Interior Design" "Structural Designing" "Architect Consultancy" "Structural Consultancy"]
+</div>
+
+    <div class="cf7-field">
+        <label for="your-message">Your Message (optional)</label>
+        [textarea your-message id:your-message placeholder "Type your message"]
+    </div>
+
+    <div class="cf7-field">
+        [submit "Submit"]
+    </div>
+</div>
+
+Mail
+<table width="100%" cellpadding="0" cellspacing="0" style="background:#f3f5f7;padding:30px;font-family:Arial,sans-serif;">
+<tr>
+<td align="center">
+
+<table width="620" cellpadding="0" cellspacing="0" style="background:#ffffff;border-radius:8px;overflow:hidden;border:1px solid #e6e6e6;">
+
+<!-- Logo Section -->
+
+<tr style="background:#fff";>
+<td style="background:#000;padding:25px;text-align:center;border-bottom:1px solid #eee;">
+<img src="https://buildsun.co.in/wp-content/uploads/2026/02/logo-1.png" style="max-width:180px;">
+</td>
+</tr>
+
+<!-- Title -->
+
+<tr>
+<td style="padding:25px">
+
+<h2 style="margin-top:0;color:#1a1a1a;font-weight:600;">
+New Client Enquiry
+</h2>
+
+<p style="color:#555;font-size:14px;margin-bottom:20px;">
+A new enquiry has been received from the website.
+</p>
+
+<table width="100%" cellpadding="10" cellspacing="0" style="border-collapse:collapse;font-size:14px;color:#333">
+
+<tr style="background:#f9fafb">
+<td width="35%"><strong>Client Name</strong></td>
+<td>[your-name]</td>
+</tr>
+
+<tr>
+<td><strong>Email Address</strong></td>
+<td>[your-email]</td>
+</tr>
+
+<tr style="background:#f9fafb">
+<td><strong>Requested Service</strong></td>
+<td>[your-subject]</td>
+</tr>
+
+<tr>
+<td valign="top"><strong>Message</strong></td>
+<td>[your-message]</td>
+</tr>
+
+</table>
+
+</td>
+</tr>
+
+<!-- Footer -->
+
+<tr>
+<td style="background:#f6f6f6;padding:18px;text-align:center;font-size:12px;color:#777">
+
+Submitted via website<br>
+
+<strong>[_site_title]</strong><br>
+
+<a href="[_site_url]" style="color:#0a66c2;text-decoration:none;">
+[_site_url]
+</a>
+
+</td>
+</tr>
+
+</table>
+
+</td>
+</tr>
+</table>
+
+custom html
+<!-- Custom Thank You Message -->
+<div id="thank-you-message" class="thank-you-box">
+  <h2>Thank You! 🎉</h2>
+  <p>Your enquiry has been submitted successfully.</p>
+  <p>Our Buildsun team will contact you shortly.</p>
+  <a href="/" class="btn-home">Back to Home</a>
+</div>
+
+<style>
+/* Hide default CF7 message */
+.wpcf7 .wpcf7-response-output {
+    display: none !important;
+}
+
+/* Thank You Box Styles */
+.thank-you-box {
+    max-width: 500px;
+    margin: 40px auto;
+    padding: 40px;
+    background: #ffffff;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    font-family: Arial, sans-serif;
+    opacity: 0;
+    transition: opacity 0.6s ease;
+    display: none;
+}
+
+.thank-you-box.show {
+    display: block;
+    opacity: 1;
+}
+
+.thank-you-box h2 {
+    color: #0f172a;
+    margin-bottom: 10px;
+}
+
+.thank-you-box p {
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.btn-home {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 25px;
+    background: #0f172a;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 6px;
+}
+</style>
+
+<script>
+document.addEventListener('wpcf7mailsent', function(event) {
+    // Hide the form
+    var form = event.target;
+    form.style.display = "none";
+
+    // Show custom thank you message
+    var thankMsg = document.getElementById('thank-you-message');
+    thankMsg.classList.add('show');
+}, false);
+</script>
